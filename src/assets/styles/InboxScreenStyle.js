@@ -27,10 +27,10 @@ export default StyleSheet.create({
     paddingHorizontal: '40%',
     flexDirection: "row",
     alignItems: "center",
-    height: '37%',
+    paddingVertical: "3%"
   },
   input: {
-    height: 85,
+    height: 105,
     width: '90%',
     borderColor: colors.black,
     borderWidth: 1,
@@ -58,6 +58,7 @@ export default StyleSheet.create({
   mainInnerWrapper: {
     alignItems: "center",
     opacity: 1,
+    marginBottom: "10%"
   },
   phoneNumberPlaceholderStyle: {
     textAlign: "left",
@@ -66,8 +67,16 @@ export default StyleSheet.create({
     color: colors.white,
     backgroundColor: colors.black,
   },
+  responseWrapper: {
+    backgroundColor: colors.black,
+    marginHorizontal: "5%",
+    marginVertical: "5%",
+    height: 200,
+    borderColor: colors.black,
+    borderWidth: 1,
+    borderRadius: 5,
+  },
   responseText: {
-    marginHorizontal: "6%",
     marginVertical: "4%",
     paddingVertical: "2%",
     paddingHorizontal: "2%",

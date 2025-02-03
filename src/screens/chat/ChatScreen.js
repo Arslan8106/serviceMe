@@ -49,11 +49,7 @@ const ChatScreen = () => {
               <Text style={styles.sendMessageText}>Send</Text>
             </View>
           </TouchableOpacity>
-
         </View>
-        <Text style={styles.responseText}>Response</Text>
-
-
         <View
           style={{
             borderBottomColor: colors.lightGrey,
@@ -62,6 +58,11 @@ const ChatScreen = () => {
             marginHorizontal: '5%',
           }}
         />
+        <View style={styles.responseWrapper}>
+          <Text style={styles.responseText}>Response</Text>
+        </View>
+
+
       </View>
       {/*{!isAuthenticated && <LoginSignupModal isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />}*/}
     </SafeAreaView>
