@@ -14,8 +14,7 @@ const HomeScreen = () => {
 
             <Text style={styles.appLogoText}>Diagnose, Fix, Drive Confidently</Text>
 
-            </View>
-          {!isLoggedIn && <LoginSignupModal isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn} />    }
+        </View>
 
       </SafeAreaView>
   )

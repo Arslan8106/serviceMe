@@ -9,6 +9,7 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import ChatScreenStack from '../../screens/chat/ChatScreenStack';
 import CameraScreenStack from '../../screens/camera/CameraScreenStack';
 import WorkshopScreenStack from '../../screens/workshop/WorkshopScreenStack';
+import HomeScreen from '../../screens/home/HomeScreen';
 // import FavouritesScreenStack from "../../screens/favourites/FavouritesScreenStack";
 // import TripsScreenStack from "../../screens/trips/TripsScreenStack";
 // import InboxScreenStack from "../../screens/inbox/InboxScreenStack";
