@@ -10,6 +10,8 @@ import ChatScreenStack from '../../screens/chat/ChatScreenStack';
 import CameraScreenStack from '../../screens/camera/CameraScreenStack';
 import WorkshopScreenStack from '../../screens/workshop/WorkshopScreenStack';
 import HomeScreen from '../../screens/home/HomeScreen';
+import WorkshopScreen from '../../screens/workshop/WorkshopScreen';
+import CameraScreen from '../../screens/camera/CameraScreen';
 // import FavouritesScreenStack from "../../screens/favourites/FavouritesScreenStack";
 // import TripsScreenStack from "../../screens/trips/TripsScreenStack";
 // import InboxScreenStack from "../../screens/inbox/InboxScreenStack";
@@ -52,7 +54,7 @@ const TabBar = ({ navigation, route }) => {
         },
       }}
     >
-      <Tab.Screen name="Home" component={HomeScreenStack} options={{
+      <Tab.Screen name="Home" component={HomeScreen} options={{
         headerShown: false,
 
         // tabBarLabelStyle: [
@@ -74,7 +76,7 @@ const TabBar = ({ navigation, route }) => {
         unmountOnBlur: true,
       }}
       />
-      <Tab.Screen name="Camera" component={CameraScreenStack} options={{
+      <Tab.Screen name="Camera" component={CameraScreen} options={{
         headerShown: false,
         tabBarLabel: "Camera",
         tabBarIcon: ({ color, size }) => (
@@ -83,7 +85,7 @@ const TabBar = ({ navigation, route }) => {
         unmountOnBlur: true,
       }}
       />
-      <Tab.Screen name="Workshop" component={WorkshopScreenStack} options={{
+      <Tab.Screen name="Workshop" component={WorkshopScreen} options={{
         headerShown: false,
         tabBarLabel: "Workshop",
         tabBarIcon: ({ color, size }) => (

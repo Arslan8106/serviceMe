@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "23519411260",
+    "project_id": "serviceme-ed037",
+    "storage_bucket": "serviceme-ed037.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:23519411260:android:b70ae0fb043ef870e15739",
+        "android_client_info": {
+          "package_name": "com.serviceme"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB8BhtXoyYWxB4uy4GoNqTAh1fUB8x--m4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

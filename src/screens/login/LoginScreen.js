@@ -1,28 +1,45 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {
   StyleSheet,
   Text,
   View,
   Image,
   TextInput,
-  Button,
   TouchableOpacity,
-  Pressable,
 } from 'react-native';
+import auth from '@react-native-firebase/auth';
 import colors from '../../assets/colors/colors';
 import {useNavigation} from '@react-navigation/native';
 import Toast from 'react-native-toast-message';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import {loginSuccess} from '../../redux/action';
+import {useDispatch} from 'react-redux';
 
-const LoginScreen = ({navigation}) => {
+const LoginScreen = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  // const navigation = useNavigation();
+  const navigation = useNavigation();
+  const dispatch = useDispatch();
 
-  const Login = () => {
-    Toast.show({type: 'success', text1: 'Welcome'});
-    navigation.navigate('TabBar');
+  const Login = async () => {
+    try {
+      const userCredential = await auth().signInWithEmailAndPassword(
+        email,
+        password,
+      );
+      const loggedInUser = userCredential.user._user;
+      if (loggedInUser) {
+        dispatch(loginSuccess(loggedInUser));
+        Toast.show({type: 'success', text1: 'Welcome', visibilityTime: 1500});
+      }
+    } catch (error) {
+      console.log(error);
+      Toast.show({
+        type: 'error',
+        text1: 'Incorrect email or password' || error.message,
+      });
+    }
   };
-
   const signUp = () => {
     navigation.navigate('SignupScreen');
   };
@@ -64,14 +81,14 @@ const LoginScreen = ({navigation}) => {
             secureTextEntry={true}
           />
         </View>
-        <View style={styles.forgotLinksWrapper}>
-          <TouchableOpacity>
-            <Text style={styles.rememberMeButton}>Remember Me?</Text>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <Text style={styles.forgot_button}>Forgot Password?</Text>
-          </TouchableOpacity>
-        </View>
+        {/*<View style={styles.forgotLinksWrapper}>*/}
+        {/*  <TouchableOpacity>*/}
+        {/*    <Text style={styles.rememberMeButton}>Remember Me?</Text>*/}
+        {/*  </TouchableOpacity>*/}
+        {/*  <TouchableOpacity>*/}
+        {/*    <Text style={styles.forgot_button}>Forgot Password?</Text>*/}
+        {/*  </TouchableOpacity>*/}
+        {/*</View>*/}
         <TouchableOpacity onPress={Login} style={styles.emailSendButton}>
           <Text style={styles.emailSendButtonText}>Next</Text>
         </TouchableOpacity>
@@ -106,9 +123,10 @@ const styles = StyleSheet.create({
   image: {
     justifyContent: 'center',
     width: 200,
-    height: 180,
-    marginVertical: 100,
-    marginLeft: 100,
+    height: 170,
+    marginVertical: 80,
+    marginLeft: 80,
+    borderRadius: 40,
   },
   signInStyle: {
     textAlign: 'center',
@@ -161,6 +179,7 @@ const styles = StyleSheet.create({
     opacity: 1,
     width: '75%',
     marginTop: '5%',
+    marginBottom: '3%',
   },
   emailSendButtonText: {
     textAlign: 'center',

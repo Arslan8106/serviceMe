@@ -11,23 +11,40 @@ export default StyleSheet.create({
     fontFamily: "Poppins-ExtraBold",
     fontSize: 20,
     color: colors.white,
-    fontWeight: 500,
+    fontWeight: 900,
     opacity: 1,
     marginBottom: "6%",
     backgroundColor: colors.black,
   },
   innerTextWrapper: {
     paddingHorizontal: "4%",
-
     alignItems: "flex-start",
   },
   sendWhatsappMessageWrapper: {
+    borderRadius: 10,
+    backgroundColor: colors.darkRed,
+    paddingHorizontal: '40%',
+    flexDirection: "row",
+    alignItems: "center",
+    paddingVertical: "3%",
+  },
+  sendMessageWrapper: {
+    borderRadius: 10,
+    backgroundColor: colors.primary,
+    paddingHorizontal: '40%',
+    flexDirection: "row",
+    alignItems: "center",
+    paddingVertical: "3%",
+    marginBottom: "4%"
+  },
+  clearMessageWrapper: {
     borderRadius: 10,
     backgroundColor: colors.black,
     paddingHorizontal: '40%',
     flexDirection: "row",
     alignItems: "center",
-    paddingVertical: "3%"
+    paddingVertical: "3%",
+    marginBottom: "2%"
   },
   input: {
     height: 105,
@@ -42,9 +59,17 @@ export default StyleSheet.create({
     backgroundColor: colors.black,
   },
   sendMessageText: {
-    color: colors.primary,
+    color: colors.white,
     fontSize: 20,
     alignItems: "center",
+    fontWeight: 800
+  },
+  clearMessageText: {
+    color: colors.white,
+    fontSize: 20,
+    alignItems: "center",
+    fontWeight: 800
+
   },
   appLogoStyle: {
     width: "100%",
@@ -71,10 +96,14 @@ export default StyleSheet.create({
     backgroundColor: colors.black,
     marginHorizontal: "5%",
     marginVertical: "5%",
-    height: 200,
+    height: 260,
     borderColor: colors.black,
     borderWidth: 1,
     borderRadius: 5,
+  },
+  skeletonWrapper: {
+    marginHorizontal: "5%",
+    backgroundColor: colors.midLightBlack,
   },
   responseText: {
     marginVertical: "4%",
@@ -82,8 +111,8 @@ export default StyleSheet.create({
     paddingHorizontal: "2%",
     textAlign: "left",
     fontFamily: "Poppins-ExtraBold",
-    fontSize: 20,
-    color: colors.lightGrey,
+    fontSize: 18,
+    color: colors.white,
     fontWeight: 500,
     opacity: 1,
     marginBottom: "6%",

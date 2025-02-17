@@ -14,7 +14,7 @@ const WorkshopScreenStack = () => {
     >
       <Stack.Group>
         <Stack.Screen
-          name="ChatScreen"
+          name="WorkShopScreen"
           component={WorkshopScreen}
           options={{ headerShown: false }}
         />
