@@ -193,9 +193,6 @@ const CameraScreen = () => {
     navigation.navigate('Workshop', {workshops});
   };
 
-  const OPENAI_API_KEY =
-    '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'; // Your API Key
-
   const recognizeImage = async uri => {
     try {
       setAnalysis('');
