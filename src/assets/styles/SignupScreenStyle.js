@@ -17,12 +17,13 @@ export default StyleSheet.create({
         backgroundColor: colors.darkGrey,
         paddingBottom: "10%"
     },
-    image:{
-        justifyContent: "center",
-        width: 230,
-        height: 180,
-        marginVertical: "12%",
-        marginHorizontal: "27%",
+    image: {
+        justifyContent: 'center',
+        width: 200,
+        height: 170,
+        marginVertical: 40,
+        marginLeft: 90,
+        borderRadius: 40,
     },
     signInStyle: {
         textAlign: "center",
@@ -51,8 +52,7 @@ export default StyleSheet.create({
     },
     rememberMeButton: {
         paddingBottom: "3%",
-        paddingRight: "28%",
-        color: colors.lightGrey,
+        color: colors.black,
     },
     forgot_button: {
         paddingVertical: "4%",

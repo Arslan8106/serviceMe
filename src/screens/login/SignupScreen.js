@@ -11,19 +11,31 @@ import colors from '../../assets/colors/colors';
 import {useNavigation} from '@react-navigation/native';
 import Toast from 'react-native-toast-message';
 import styles from '../../assets/styles/SignupScreenStyle';
+import auth from "@react-native-firebase/auth";
+import {loginSuccess} from '../../redux/action';
+import {useDispatch} from 'react-redux';
 
 
 const SignupScreen = props => {
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
-  const [role, setRole] = useState(null);
   const navigation = useNavigation();
-  const Signup = () => {
-    navigation.navigate('TabBar');
-    Toast.show({type: 'success', text1: 'Welcome'});
-  };
+  const dispatch = useDispatch();
 
+  const Signup = async () => {
+    try {
+      const userCredential = await auth().createUserWithEmailAndPassword(email, password);;
+      const loggedInUser = userCredential.user._user;
+      if (loggedInUser) {
+        dispatch(loginSuccess(loggedInUser));
+        Toast.show({type: 'success', text1: "Account created successfully!", visibilityTime: 1500});
+      }
+    } catch (error) {
+      console.log(error);
+      Toast.show({ type: "error", text1: (error.response && error.response.data.error) || error.message, visibilityTime: 1500 });
+    }
+  };
   const signIn = () => {
     navigation.navigate('LoginScreen');
   };
@@ -79,7 +91,7 @@ const SignupScreen = props => {
         </View>
         <View style={styles.forgotLinksWrapper}>
           <Text style={styles.rememberMeButton}>
-            Password must by 6 characters
+            Password must be 6 characters long
           </Text>
         </View>
         <TouchableOpacity onPress={Signup} style={styles.emailSendButton}>
