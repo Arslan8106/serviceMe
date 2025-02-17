@@ -300,7 +300,7 @@ const CameraScreen = () => {
 
     try {
       const response = await axios.get(
-        `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&radius=50000&keyword=${repairType}&key=AIzaSyAGKksK92yS9JK-ksqlqotUsVN85f-L5Mg`,
+        `https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&radius=50000&keyword=${repairType}&key=`,
       );
       console.log("response:", response);
       if (response.data.results) {
