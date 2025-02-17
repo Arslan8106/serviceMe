@@ -23,8 +23,6 @@ const ChatScreen = () => {
 
   const fetchNLPResponse = async () => {
     Keyboard.dismiss();
-    // const apiKey = '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'; // Replace with your API key
-
     const data = {
       model: 'gpt-4o-mini',
       messages: [{role: 'user', content: inputText}],
