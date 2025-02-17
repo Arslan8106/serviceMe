@@ -53,7 +53,7 @@ const ChatScreen = () => {
         'Error fetching response:',
         error.response?.data || error.message,
       );
-      setResponse('Something went wrong, please try again.');
+      setResponse('Something went wrong, please try again later.');
     } finally {
       setLoading(false);
     }
